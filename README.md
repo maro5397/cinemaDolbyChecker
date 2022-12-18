@@ -8,6 +8,7 @@
     "discordkey": "",
     "url": "https://www.megabox.co.kr/specialtheater/dolby/time",
     "TWILIO_ACCOUNT_SID": "",
-    "TWILIO_AUTH_TOKEN": ""
+    "TWILIO_AUTH_TOKEN": "",
+    "TWILIO_PHONE_NUMBER": ""
 }
 ```

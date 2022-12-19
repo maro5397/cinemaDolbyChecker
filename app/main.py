@@ -1,6 +1,8 @@
 import sys, os
 import discord
 import multiprocessing
+import logging
+logging.basicConfig(filename='../info.log', filemode='w', level=logging.INFO, format='%(asctime)s - %(levelname)s [%(filename)s]: %(name)s %(funcName)20s - Message: %(message)s')
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from src import jsonparser as jp
 from src import sms
@@ -8,6 +10,7 @@ from src import crawler
 from discord.ext import commands
 from discord import Intents
 from multiprocessing import Process
+
 
 
 app = commands.Bot(command_prefix='!', intents=Intents.all())

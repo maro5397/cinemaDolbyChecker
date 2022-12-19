@@ -45,7 +45,7 @@ async def check(ctx, *args):
     if watcher != 0:
         await ctx.channel.send("이미 돌비시네마 감시자가 동작 중 입니다.")
         return
-    print(f'{len(args)} arguments:', args)
+    logging.info(f'{len(args)} arguments:', args)
     embed = discord.Embed(title="!check")
     embed.add_field(name='지역', value='"남양주현대아울렛 스페이스원", "대구신세계(동대구)", "대전신세계 아트앤사이언스", "안성스타필드", "코엑스"', inline=False)
     embed.add_field(name='영화제목', value='메가박스 예매 화면에 나오는 영화제목을 그대로 입력하여 주십시오.', inline=False)
@@ -75,6 +75,7 @@ async def stop(ctx, *args):
     if watcher == 0:
         await ctx.channel.send("돌비시네마 감시자가 동작 중이지 않습니다.")
         return
+    logging.info(f'{len(args)} arguments:', args)
     watcher.terminate()
     cinemawatcher = {}
     watcher = 0
@@ -88,6 +89,7 @@ async def show(ctx, *args):
     if watcher == 0:
         await ctx.channel.send("돌비시네마 감시자가 동작 중이지 않습니다.")
         return
+    logging.info(f'{len(args)} arguments:', args)
     embed = discord.Embed(title="!check")
     embed.add_field(name='지역', value=cinemawatcher['cinemaplace'], inline=False)
     embed.add_field(name='영화제목', value=cinemawatcher['movietitle'], inline=False)
@@ -98,7 +100,7 @@ async def show(ctx, *args):
     
 @app.command()
 async def reserve(ctx, *args):
-    print(f'{len(args)} arguments:', args)
+    logging.info(f'{len(args)} arguments:', args)
     await ctx.channel.send("ready for service")
     
 

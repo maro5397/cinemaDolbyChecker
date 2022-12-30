@@ -60,12 +60,12 @@ class Crawler():
             
         except NoSuchElementException:
             logging.info("It can reserve date!")
-            pass
+            return True
             
         except ElementClickInterceptedException:
             logging.info("There is no click Elements")
             raise KeyError("There is no click Elements")
-            return
+            return False
 
 
     def close(self):
